@@ -1,4 +1,45 @@
-nav li{
-    margin-left: 20px;
-    position: relative;
+/* Update the existing .drop li rule */
+.drop li {
+    margin: 0 15px; 
+    /* NEW: Set position relative for the dropdown container */
+    position: relative; 
+}
+.dropdown-content {
+    /* KEY: Take it out of the flow and position absolutely relative to the parent li */
+    position: absolute; 
+    
+    /* Position it right below the "Services" link */
+    top: 100%; 
+    left: 0;   
+    
+    /* Style and layout */
+    background-color: #444; 
+    min-width: 150px;       
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;             /* Ensure it stays above other content */
+    
+    list-style: none;       /* Remove bullets */
+    padding: 0;
+    margin: 0;
+
+    /* KEY: Hide the menu by default */
+    display: none; 
+}
+
+/* Style the links inside the dropdown */
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; /* Makes each sub-link take up its own line */
+    text-align: left;
+}
+
+/* Hover effect for sub-links */
+.dropdown-content a:hover {
+    background-color: #666; 
+}
+/* Show the dropdown when the user hovers over the parent list item */
+.dropdown:hover .dropdown-content {
+    display: block; 
 }
